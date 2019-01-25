@@ -48,22 +48,31 @@
     heartCell.birthRate = 0.f;
     heartCell.lifetime = 10.f; //生命周期
     
+//    heartCell.velocity = -120.f;
+//    heartCell.velocityRange = 60.f;
+//    heartCell.yAcceleration = 20.f;
+//
+//    heartCell.emissionLongitude = M_PI_2;
+//    heartCell.emissionRange = M_PI_2 * 0.55;
+    
+    ///
     heartCell.velocity = -120.f;
     heartCell.velocityRange = 60.f;
     heartCell.yAcceleration = 20.f;
-
-    heartCell.emissionLongitude = M_PI_2;
-    heartCell.emissionRange = M_PI_2 * 0.55;
     
-    /*
-    heartCell.velocity = -120.f;
-    heartCell.velocityRange = 60.f;
-    heartCell.yAcceleration = 20.f;
-    
-    heartCell.emissionLongitude = 0;
+//    heartCell.emissionLongitude = 0;
     heartCell.emissionLongitude = M_PI;
-    heartCell.emissionRange = M_PI_2 * 0.55;
-*/
+//    heartCell.emissionRange = M_PI_2 * 0.55;
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     heartCell.contents = (id)[UIImage imageNamed:@"love_red"].CGImage;
     heartCell.color = [UIColor colorWithRed:0.5 green:0.5 blue:0.5 alpha:0.5].CGColor;

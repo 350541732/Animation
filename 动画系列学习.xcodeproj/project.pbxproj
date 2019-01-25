@@ -29,6 +29,7 @@
 		B025263321F94FB100D1CE29 /* LoveHeartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B025263221F94FB100D1CE29 /* LoveHeartViewController.m */; };
 		B025263621F95CBE00D1CE29 /* FireViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B025263521F95CBE00D1CE29 /* FireViewController.m */; };
 		B025DA7321F99D9000B6B000 /* FireworksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B025DA7221F99D9000B6B000 /* FireworksViewController.m */; };
+		B025DA7721FA9B7600B6B000 /* RollerCoasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B025DA7621FA9B7600B6B000 /* RollerCoasterViewController.m */; };
 		B099C54A21F160D10005C6B8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B099C54921F160D10005C6B8 /* AppDelegate.m */; };
 		B099C55021F160D10005C6B8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B099C54E21F160D10005C6B8 /* Main.storyboard */; };
 		B099C55221F160D20005C6B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B099C55121F160D20005C6B8 /* Assets.xcassets */; };
@@ -80,6 +81,8 @@
 		B025263521F95CBE00D1CE29 /* FireViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FireViewController.m; sourceTree = "<group>"; };
 		B025DA7121F99D9000B6B000 /* FireworksViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FireworksViewController.h; sourceTree = "<group>"; };
 		B025DA7221F99D9000B6B000 /* FireworksViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FireworksViewController.m; sourceTree = "<group>"; };
+		B025DA7521FA9B7600B6B000 /* RollerCoasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RollerCoasterViewController.h; sourceTree = "<group>"; };
+		B025DA7621FA9B7600B6B000 /* RollerCoasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RollerCoasterViewController.m; sourceTree = "<group>"; };
 		B099C54521F160D10005C6B8 /* 动画系列学习.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "动画系列学习.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B099C54821F160D10005C6B8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B099C54921F160D10005C6B8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -217,6 +220,15 @@
 			path = "CAGradientLayer颜色渐变";
 			sourceTree = "<group>";
 		};
+		B025DA7421FA9A7A00B6B000 /* 过山车 */ = {
+			isa = PBXGroup;
+			children = (
+				B025DA7521FA9B7600B6B000 /* RollerCoasterViewController.h */,
+				B025DA7621FA9B7600B6B000 /* RollerCoasterViewController.m */,
+			);
+			path = "过山车";
+			sourceTree = "<group>";
+		};
 		B099C53C21F160D10005C6B8 = {
 			isa = PBXGroup;
 			children = (
@@ -236,6 +248,7 @@
 		B099C54721F160D10005C6B8 /* 动画系列学习 */ = {
 			isa = PBXGroup;
 			children = (
+				B025DA7421FA9A7A00B6B000 /* 过山车 */,
 				B025261F21F7F71A00D1CE29 /* CAGradientLayer颜色渐变 */,
 				B025261821F6F66400D1CE29 /* CAEmitterLayer动画 */,
 				B025261421F6E38A00D1CE29 /* CAReplicatorLayer播放器指示条 */,
@@ -361,6 +374,7 @@
 				B025261B21F6F68C00D1CE29 /* CAEmitterLayerViewController.m in Sources */,
 				B025DA7321F99D9000B6B000 /* FireworksViewController.m in Sources */,
 				B099C56821F1796F0005C6B8 /* CABasicAnimationViewController.m in Sources */,
+				B025DA7721FA9B7600B6B000 /* RollerCoasterViewController.m in Sources */,
 				B099C56421F164AA0005C6B8 /* ClockController.m in Sources */,
 				B099C55821F160D20005C6B8 /* main.m in Sources */,
 				B0222B7C21F555660035CA92 /* CAKeyframeAnimationViewController.m in Sources */,

@@ -19,6 +19,7 @@
 #import "CAReplicatorViewController.h"
 #import "CAEmitterLayerViewController.h"
 #import "CAGradientLayerViewController.h"
+#import "RollerCoasterViewController.h"
 @interface TableViewController ()
 
 @property (nonatomic, strong) NSMutableArray *titlesArray;
@@ -123,12 +124,18 @@
         [self.navigationController pushViewController:gradientVC animated:YES];
         
     }
+    
+    if(indexPath.row == 12) {
+        RollerCoasterViewController *rollVC = [RollerCoasterViewController new];
+        
+        [self.navigationController pushViewController:rollVC animated:YES];
+    }
 }
 
 -(NSMutableArray *)titlesArray
 {
     if (!_titlesArray) {
-        _titlesArray = [[NSMutableArray alloc]initWithObjects:@"时分秒的指针",@"Core Animation动画平移",@"Core Animation旋转缩放",@"动画组合",@"登录动画",@"CAKeyframeAnimation关键帧动画",@"CAKeyframe Twitter启动动画",@"CAAnimationGroup动画组",@"CAShapeLayer流量图",@"CAReplicator播放器指示条",@"CAEmitter点赞动画",@"CAGrdientLayer颜色渐变", nil];
+        _titlesArray = [[NSMutableArray alloc]initWithObjects:@"时分秒的指针",@"Core Animation动画平移",@"Core Animation旋转缩放",@"动画组合",@"登录动画",@"CAKeyframeAnimation关键帧动画",@"CAKeyframe Twitter启动动画",@"CAAnimationGroup动画组",@"CAShapeLayer流量图",@"CAReplicator播放器指示条",@"CAEmitter动画",@"CAGrdientLayer颜色渐变",@"过山车动画", nil];
     }
     return _titlesArray;
 }

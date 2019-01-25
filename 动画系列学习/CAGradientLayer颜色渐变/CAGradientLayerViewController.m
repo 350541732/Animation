@@ -30,6 +30,7 @@
     
 }
 
+
 -(void)setUpGradientLayer
 {
     self.gradientLayer.frame = self.view.bounds;
