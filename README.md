@@ -31,10 +31,9 @@ clockLayer.contents = (id)([UIImage imageNamed:@"clock"]().CGImage);
 ```
 \`- position  类似于UIView的center（默认情况下，在图形默认的中心）
 
- - anchorPoint (锚点) 决定于positon的位置，我们可以通过anchorPoint决定position的位置。它的范围是（0，0） （1，1）。如下图![https://upload-images.jianshu.io/upload_images/3015045-bdceb22ec861372a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/297][image-2]
+ - anchorPoint (锚点) 决定于positon的位置，我们可以通过anchorPoint决定position的位置。它的范围是（0，0） （1，1）。如下图![](https://upload-images.jianshu.io/upload_images/3015045-bdceb22ec861372a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/297)
 - 在上面的钟表，我们就修改了它的anchorPoint。试想如果我们不去修改它的anchorPoint，那么他就会变成这个样子，
-![https://upload-images.jianshu.io/upload_images/3015045-57ff07053fc19fe1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1000][image-3]
-
+  ![https://upload-images.jianshu.io/upload_images/3015045-57ff07053fc19fe1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1000][image-3]
 - 部分代码如下（CGPointMake设为（0.5，0）或（0.5，1）效果是相同的 ，大家可以自己修改看一下）
 ```
 `UIView *hourHandView = [\[UIView alloc]()init];
