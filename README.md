@@ -8,8 +8,8 @@ ios 动画学习
 ### [demo查看]()(https://github.com/350541732/Animation/tree/master)
 
 ### 1关于CALayer的一些属性
-效果：
-![1](/Users/liguicheng/Documents/1.png)
+效果
+![](https://upload-images.jianshu.io/upload_images/3015045-f4d9ea1d9ffb23c0.gif?imageMogr2/auto-orient/strip%7CimageView2/2/w/300)
 
 #### CALayer Overview
 - CALayer类在概念上和UIView类似，同样也是一些被层级关系树管理的矩形块，同样也可以包含一些内容(像图片，文本或者背景色)，管理子图层的位置。它们有一些方法和属性用来做动画和变换。和UIView 最大的不同是CALayer不处理用户的交互。
@@ -29,11 +29,11 @@ clockLayer.contents = (__bridge id _Nullable)([UIImage imageNamed:@"clock"]().CG
 
 clockLayer.contents = (id)([UIImage imageNamed:@"clock"]().CGImage);
 ```
-`- position  类似于UIView的center（默认情况下，在图形默认的中心）
+\`- position  类似于UIView的center（默认情况下，在图形默认的中心）
 
- - anchorPoint (锚点) 决定于positon的位置，我们可以通过anchorPoint决定position的位置。它的范围是（0，0） （1，1）。如下图![3015045-bdceb22ec861372a](/Users/liguicheng/Documents/3015045-bdceb22ec861372a.png)
+ - anchorPoint (锚点) 决定于positon的位置，我们可以通过anchorPoint决定position的位置。它的范围是（0，0） （1，1）。如下图![https://upload-images.jianshu.io/upload_images/3015045-bdceb22ec861372a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/297][image-2]
 - 在上面的钟表，我们就修改了它的anchorPoint。试想如果我们不去修改它的anchorPoint，那么他就会变成这个样子，
-![3015045-57ff07053fc19fe1](/Users/liguicheng/Documents/3015045-57ff07053fc19fe1.png)
+![https://upload-images.jianshu.io/upload_images/3015045-57ff07053fc19fe1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1000][image-3]
 
 - 部分代码如下（CGPointMake设为（0.5，0）或（0.5，1）效果是相同的 ，大家可以自己修改看一下）
 ```
@@ -45,26 +45,26 @@ hourHandView.layer.anchorPoint = CGPointMake(0.5, 1);
 [self.view addSubview:hourHandView]();
 self.hourHandView = hourHandView;
 ```
-`
+\`
 #### Animation（图片来自网络）
-![831339-b143eab37d0ec973](/Users/liguicheng/Documents/831339-b143eab37d0ec973.png)
+![https://upload-images.jianshu.io/upload_images/3015045-0655ee4daee0aeb4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/567][image-4]
 
 #### CABasicAnimation
-![2](/Users/liguicheng/Documents/2.png)
+![https://upload-images.jianshu.io/upload_images/3015045-24e269d2842177f1.gif?imageMogr2/auto-orient/strip%7CimageView2/2/w/300][image-5]
 
 - An object that provides basic, single-keyframe animation capabilities for a layer property. 继承自 CAPropertyAnimation。我们可通过keyPath设置动画的一些属性。常用的keyPath(不用记，用到的时候自己看一下就好了)
-- fromValue 初始状态 比如 ```basicAnimation.fromValue = [NSValue valueWithCGPoint:CGPointMake(0, 0)];```表示初始位置。
-- toValue 结束状态 比如 ```  basicAnimation.toValue = [NSValue valueWithCGPoint:CGPointMake(300, 300)];```表示结束位置。
-- ```CABasicAnimation算是CAKeyFrameAnimation的 特殊情况，即不考虑中间变换过程，只考虑起始点与目标点就可以了```
+- fromValue 初始状态 比如 `basicAnimation.fromValue = [NSValue valueWithCGPoint:CGPointMake(0, 0)];`表示初始位置。
+- toValue 结束状态 比如 `  basicAnimation.toValue = [NSValue valueWithCGPoint:CGPointMake(300, 300)];`表示结束位置。
+- `CABasicAnimation算是CAKeyFrameAnimation的 特殊情况，即不考虑中间变换过程，只考虑起始点与目标点就可以了`
 
-![3015045-17a5793c59a784db](/Users/liguicheng/Documents/3015045-17a5793c59a784db.png)
+![3015045-17a5793c59a784db][image-6]
 
 #### CAKeyframeAnimation关键帧动画
-![](/Users/liguicheng/Desktop/4.png)
+![https://upload-images.jianshu.io/upload_images/3015045-b5b5b3f27b79e052.gif?imageMogr2/auto-orient/strip%7CimageView2/2/w/300][image-7]
 
-- 通过两种方式来实现动画 ```@property(nullable, copy) NSArray *values;```和``` @property(nullable) CGPathRef path;```
-- ```@property(nullable, copy) NSArray<NSNumber *> *keyTimes;```该 属性是一个数组，假设用以指定每个子路径(AB,BC,CD)的时间。如果你没有显式地对keyTimes进行设置，则系统会默认每条子路径的时间 为：ti=duration/(5-1)，即每条子路径的duration相等，都为duration的1\4。当然，我们也可以传个数组让物体快慢结 合。例如，你可以传入{0.0, 0.1,0.6,0.7,1.0}，其中首尾必须分别是0和1，因此tAB=0.1-0, tCB=0.6-0.1, tDC=0.7-0.6, tED=1-0.7.....
-- ```@property(nullable, copy) NSArray<CAMediaTimingFunction *> *timingFunctions;```用以指定时间函数，类似于运动的加速度
+- 通过两种方式来实现动画 `@property(nullable, copy) NSArray *values;`和` @property(nullable) CGPathRef path;`
+- `@property(nullable, copy) NSArray<NSNumber *> *keyTimes;`该 属性是一个数组，假设用以指定每个子路径(AB,BC,CD)的时间。如果你没有显式地对keyTimes进行设置，则系统会默认每条子路径的时间 为：ti=duration/(5-1)，即每条子路径的duration相等，都为duration的1\4。当然，我们也可以传个数组让物体快慢结 合。例如，你可以传入{0.0, 0.1,0.6,0.7,1.0}，其中首尾必须分别是0和1，因此tAB=0.1-0, tCB=0.6-0.1, tDC=0.7-0.6, tED=1-0.7.....
+- `@property(nullable, copy) NSArray<CAMediaTimingFunction *> *timingFunctions;`用以指定时间函数，类似于运动的加速度
 
 #### gif部分代码
 ```
@@ -114,7 +114,7 @@ keyframePlaneAni.calculationMode = kCAAnimationCubic;
 [self.planLayer addAnimation:shakeAni forKey:nil]();
 }
 ```
-`
+\`
 
 
 
@@ -122,25 +122,25 @@ keyframePlaneAni.calculationMode = kCAAnimationCubic;
 
 #### CAShapeLayer  Overview
 - A layer that draws a cubic Bezier spline in its coordinate space.(在坐标系内绘制贝塞尔曲线)
--  ```@property CGFloat strokeStart; strokeEnd```部分绘制开始值和结束值。（可以通过修改此值，处理类似实现进度条的动画）
-- ``` @property(nullable) CGPathRef path;```描绘的路径
-- ``` @property(nullable) CGColorRef fillColor;```填充路径的颜色
-- ``` @property(copy) CAShapeLayerFillRule fillRule; ``` 填充路径的规则，它的值有两种，非零和奇偶。默认非零。
--  ```@property(nullable) CGColorRef strokeColor;``` 描边颜色。
-- 继承自```CALayer```，一般和```UIBezierPath```配合使用。（使用的频率比较高）
+-  `@property CGFloat strokeStart; strokeEnd`部分绘制开始值和结束值。（可以通过修改此值，处理类似实现进度条的动画）
+- ` @property(nullable) CGPathRef path;`描绘的路径
+- ` @property(nullable) CGColorRef fillColor;`填充路径的颜色
+- ` @property(copy) CAShapeLayerFillRule fillRule; ` 填充路径的规则，它的值有两种，非零和奇偶。默认非零。
+-  `@property(nullable) CGColorRef strokeColor;` 描边颜色。
+- 继承自`CALayer`，一般和`UIBezierPath`配合使用。（使用的频率比较高）
 - 其他属性请看文档
 
-![](/Users/liguicheng/Desktop/3.png)
+![https://upload-images.jianshu.io/upload_images/3015045-98602076e3b7f8f6.gif?imageMogr2/auto-orient/strip%7CimageView2/2/w/300][image-8]
 #### 进度条部分代码
 ```
 `- (IBAction)animationClick:(UIButton *)sender {
 
-	if (self.timer) {
-	[self.timer fire]();
-	}
-	else {
-	self.timer = [NSTimer scheduledTimerWithTimeInterval:0.04 target:self selector:@selector(progressShowNumber) userInfo:nil repeats:YES]();
-	}
+    if (self.timer) {
+    [self.timer fire]();
+    }
+    else {
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:0.04 target:self selector:@selector(progressShowNumber) userInfo:nil repeats:YES]();
+    }
 
 }
 
@@ -200,13 +200,13 @@ _circleProgressLayer.fillColor = [UIColor clearColor]().CGColor;
 return _circleProgressLayer;
 }
 ```
-`#### CAEmitterLayer,CAEmitterCell
+\`\#### CAEmitterLayer,CAEmitterCell
 
-![5](/Users/liguicheng/Desktop/5.png)
+![https://upload-images.jianshu.io/upload_images/3015045-4674ce5add89b79f.gif?imageMogr2/auto-orient/strip%7CimageView2/2/w/300][image-9]
 
-![](/Users/liguicheng/Desktop/6.png)
+![https://upload-images.jianshu.io/upload_images/3015045-9e112f8df409b5d1.gif?imageMogr2/auto-orient/strip%7CimageView2/2/w/300][image-10]
 
-![](/Users/liguicheng/Desktop/7.png)
+![https://upload-images.jianshu.io/upload_images/3015045-e694a95f46f05249.gif?imageMogr2/auto-orient/strip%7CimageView2/2/w/300][image-11]
 
 ```
 `CAEmitterLayer
@@ -226,7 +226,7 @@ return _circleProgressLayer;
 @property float spin; // 粒子的自旋转速度系数, 默认1.0
 @property unsigned int seed; // 随机数发生器
 ```
-`
+\`
 ```
 `@property(nullable, copy) NSString *name; // 粒子名字， 默认为nil(但是可以利用name,通过keyPath设置其一些属性)
 @property(getter=isEnabled) BOOL enabled; 
@@ -264,12 +264,12 @@ return _circleProgressLayer;
 @property(nullable, copy) NSArray\<CAEmitterCell *\> *emitterCells; // 粒子里面的粒子
 @property(nullable, copy) NSDictionary *style;
 ```
-`
+\`
 ### 这里重点讲一下关于emissionLongitude的理解：
 emissionLongitude是指在xy坐标系中垂直方向与x轴之间的夹角。但是这个坐标系的和velocity（速度）的正负值是有关系的！！（希望由此研究的简友提出宝贵建议），当velocity值为正值时，那么他的坐标系是这样的
-![WechatIMG6.jpeg](/Users/liguicheng/Desktop/WechatIMG6.png)
+![https://upload-images.jianshu.io/upload_images/3015045-26f5e6fff6b0db62.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1000][image-12]
 当velocity值为负值时，他的坐标系是这样的，
-![WechatIMG7.jpeg](/Users/liguicheng/Desktop/WechatIMG7.jpeg)
+![https://upload-images.jianshu.io/upload_images/3015045-ea788c0b564e3c4c.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1000][image-13]
 
 各位看官老爷可以在[demo]()(https://github.com/350541732/Animation/tree/master)的
 如下代码修改看一下变化，欢迎大家一起交流
@@ -293,5 +293,20 @@ heartCell.emissionLongitude = M_PI;
 heartCell.emissionRange = M_PI_2 * 0.55;
 */
 ```
-`### [demo查看]()(https://github.com/350541732/Animation/tree/master)
+\`\### [demo查看]()(https://github.com/350541732/Animation/tree/master)
 
+
+
+[image-1]:	/Users/liguicheng/Documents/1.png
+[image-2]:	/Users/liguicheng/Documents/3015045-bdceb22ec861372a.png
+[image-3]:	/Users/liguicheng/Documents/3015045-57ff07053fc19fe1.png
+[image-4]:	/Users/liguicheng/Documents/831339-b143eab37d0ec973.png
+[image-5]:	/Users/liguicheng/Documents/2.png
+[image-6]:	/Users/liguicheng/Documents/3015045-17a5793c59a784db.png
+[image-7]:	/Users/liguicheng/Desktop/4.png
+[image-8]:	/Users/liguicheng/Desktop/3.png
+[image-9]:	/Users/liguicheng/Desktop/5.png
+[image-10]:	/Users/liguicheng/Desktop/6.png
+[image-11]:	/Users/liguicheng/Desktop/7.png
+[image-12]:	/Users/liguicheng/Desktop/WechatIMG6.png
+[image-13]:	/Users/liguicheng/Desktop/WechatIMG7.jpeg
