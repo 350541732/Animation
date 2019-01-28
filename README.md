@@ -33,7 +33,7 @@ clockLayer.contents = (id)([UIImage imageNamed:@"clock"]().CGImage);
 
  - anchorPoint (锚点) 决定于positon的位置，我们可以通过anchorPoint决定position的位置。它的范围是（0，0） （1，1）。如下图![](https://upload-images.jianshu.io/upload_images/3015045-bdceb22ec861372a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/297)
 - 在上面的钟表，我们就修改了它的anchorPoint。试想如果我们不去修改它的anchorPoint，那么他就会变成这个样子，
-  ![https://upload-images.jianshu.io/upload_images/3015045-57ff07053fc19fe1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1000][image-3]
+  ![](https://upload-images.jianshu.io/upload_images/3015045-57ff07053fc19fe1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1000)
 - 部分代码如下（CGPointMake设为（0.5，0）或（0.5，1）效果是相同的 ，大家可以自己修改看一下）
 ```
 `UIView *hourHandView = [\[UIView alloc]()init];
@@ -46,10 +46,10 @@ self.hourHandView = hourHandView;
 ```
 \`
 #### Animation（图片来自网络）
-![https://upload-images.jianshu.io/upload_images/3015045-0655ee4daee0aeb4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/567][image-4]
+![](https://upload-images.jianshu.io/upload_images/3015045-0655ee4daee0aeb4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/567)
 
 #### CABasicAnimation
-![https://upload-images.jianshu.io/upload_images/3015045-24e269d2842177f1.gif?imageMogr2/auto-orient/strip%7CimageView2/2/w/300][image-5]
+![](https://upload-images.jianshu.io/upload_images/3015045-24e269d2842177f1.gif?imageMogr2/auto-orient/strip%7CimageView2/2/w/300)
 
 - An object that provides basic, single-keyframe animation capabilities for a layer property. 继承自 CAPropertyAnimation。我们可通过keyPath设置动画的一些属性。常用的keyPath(不用记，用到的时候自己看一下就好了)
 - fromValue 初始状态 比如 `basicAnimation.fromValue = [NSValue valueWithCGPoint:CGPointMake(0, 0)];`表示初始位置。
@@ -59,7 +59,7 @@ self.hourHandView = hourHandView;
 ![3015045-17a5793c59a784db][image-6]
 
 #### CAKeyframeAnimation关键帧动画
-![https://upload-images.jianshu.io/upload_images/3015045-b5b5b3f27b79e052.gif?imageMogr2/auto-orient/strip%7CimageView2/2/w/300][image-7]
+![](https://upload-images.jianshu.io/upload_images/3015045-b5b5b3f27b79e052.gif?imageMogr2/auto-orient/strip%7CimageView2/2/w/300)
 
 - 通过两种方式来实现动画 `@property(nullable, copy) NSArray *values;`和` @property(nullable) CGPathRef path;`
 - `@property(nullable, copy) NSArray<NSNumber *> *keyTimes;`该 属性是一个数组，假设用以指定每个子路径(AB,BC,CD)的时间。如果你没有显式地对keyTimes进行设置，则系统会默认每条子路径的时间 为：ti=duration/(5-1)，即每条子路径的duration相等，都为duration的1\4。当然，我们也可以传个数组让物体快慢结 合。例如，你可以传入{0.0, 0.1,0.6,0.7,1.0}，其中首尾必须分别是0和1，因此tAB=0.1-0, tCB=0.6-0.1, tDC=0.7-0.6, tED=1-0.7.....
@@ -129,7 +129,7 @@ keyframePlaneAni.calculationMode = kCAAnimationCubic;
 - 继承自`CALayer`，一般和`UIBezierPath`配合使用。（使用的频率比较高）
 - 其他属性请看文档
 
-![https://upload-images.jianshu.io/upload_images/3015045-98602076e3b7f8f6.gif?imageMogr2/auto-orient/strip%7CimageView2/2/w/300][image-8]
+![](https://upload-images.jianshu.io/upload_images/3015045-98602076e3b7f8f6.gif?imageMogr2/auto-orient/strip%7CimageView2/2/w/300)
 #### 进度条部分代码
 ```
 `- (IBAction)animationClick:(UIButton *)sender {
@@ -201,11 +201,11 @@ return _circleProgressLayer;
 ```
 \`\#### CAEmitterLayer,CAEmitterCell
 
-![https://upload-images.jianshu.io/upload_images/3015045-4674ce5add89b79f.gif?imageMogr2/auto-orient/strip%7CimageView2/2/w/300][image-9]
+![](https://upload-images.jianshu.io/upload_images/3015045-4674ce5add89b79f.gif?imageMogr2/auto-orient/strip%7CimageView2/2/w/300)
 
-![https://upload-images.jianshu.io/upload_images/3015045-9e112f8df409b5d1.gif?imageMogr2/auto-orient/strip%7CimageView2/2/w/300][image-10]
+![](https://upload-images.jianshu.io/upload_images/3015045-9e112f8df409b5d1.gif?imageMogr2/auto-orient/strip%7CimageView2/2/w/300)
 
-![https://upload-images.jianshu.io/upload_images/3015045-e694a95f46f05249.gif?imageMogr2/auto-orient/strip%7CimageView2/2/w/300][image-11]
+![](https://upload-images.jianshu.io/upload_images/3015045-e694a95f46f05249.gif?imageMogr2/auto-orient/strip%7CimageView2/2/w/300)
 
 ```
 `CAEmitterLayer
@@ -266,9 +266,9 @@ return _circleProgressLayer;
 \`
 ### 这里重点讲一下关于emissionLongitude的理解：
 emissionLongitude是指在xy坐标系中垂直方向与x轴之间的夹角。但是这个坐标系的和velocity（速度）的正负值是有关系的！！（希望由此研究的简友提出宝贵建议），当velocity值为正值时，那么他的坐标系是这样的
-![https://upload-images.jianshu.io/upload_images/3015045-26f5e6fff6b0db62.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1000][image-12]
+![](https://upload-images.jianshu.io/upload_images/3015045-26f5e6fff6b0db62.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1000)
 当velocity值为负值时，他的坐标系是这样的，
-![https://upload-images.jianshu.io/upload_images/3015045-ea788c0b564e3c4c.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1000][image-13]
+![](https://upload-images.jianshu.io/upload_images/3015045-ea788c0b564e3c4c.jpeg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1000)
 
 各位看官老爷可以在[demo]()(https://github.com/350541732/Animation/tree/master)的
 如下代码修改看一下变化，欢迎大家一起交流
